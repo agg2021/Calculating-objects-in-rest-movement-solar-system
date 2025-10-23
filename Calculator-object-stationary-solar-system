@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// We define the relative gravity of some of the planets in our solar system
+#define EARTH_GRAVITY 9.81
+#define MARS_GRAVITY 3.71    // 0.38 times Earth's Gravity
+#define JUPITER_GRAVITY 24.79 // 2.53 times Earth's Gravity
+#define MOON_GRAVITY 1.62    // 0.165 times Earth's Gravity
+
+int main() {
+    char Object_1[50];      
+    double Mass_Object_1_Earth;   
+
+    printf("Please give me an object that you want to give a vacation through the solar system (If one doesn't come to mind a Tesla Roadster will do): "); 
+    scanf("%49s", Object_1);  
+
+    printf("Please give me the weight in kg of the object that you have just given me: ");
+    scanf("%lf", &Mass_Object_1_Earth);  
+
+    // Compute the weight of the user's chosen object / Elon Musk's car on Mars (N)
+    double Weight_Object_1_MARS = Mass_Object_1_Earth * MARS_GRAVITY;
+
+    // Compute the weight on Jupiter
+    double Weight_Object_1_JUPITER = Mass_Object_1_Earth * JUPITER_GRAVITY;
+
+    // Compute the weight on the Moon
+    double Weight_Object_1_MOON = Mass_Object_1_Earth * MOON_GRAVITY;
+
+    // Print all results
+    printf("On Mars, the weight of your chosen object / Elon Musk's car is: %.2f N\n", Weight_Object_1_MARS);
+    printf("On Jupiter, the weight of your chosen object / Elon Musk's car is: %.2f N\n", Weight_Object_1_JUPITER);
+    printf("On the Moon, the weight of your chosen object / Elon Musk's car is: %.2f N\n", Weight_Object_1_MOON);
+
+    return 0;
+}
