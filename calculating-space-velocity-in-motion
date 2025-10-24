@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+// We define light's speed and the average distance between the Earth and Mars 
+#define LIGHT_SPEED 299792 // km/s
+#define DISTANCE_EARTH_MARS 225000000 // km
+
+int main(){
+    double JourneyTimeSeconds, JourneyTimeHours;
+    // This is a hypothetical velocity
+    double SpaceshipVelocity = 100000; // km/s
+    
+    //Let's compute the time taken to copmlete the journey inside the SPACESHIP
+    JourneyTimeSeconds = DISTANCE_EARTH_MARS / SpaceshipVelocity;
+    JourneyTimeHours = JourneyTimeSeconds / 3600; // /3600 is a shortcut too convert second to hours
+
+    //Printing the results
+    printf("The time taken to journey from Earth to Mars in the spaceship at %.f km/s is %.f seconds \n", SpaceshipVelocity, JourneyTimeSeconds);
+    printf("That is equivalent to: %f hours \n", JourneyTimeHours);
+    
+    //Now, we'll calculate the time taken to complete the journey if we where moving at LIGHT SPEED
+    JourneyTimeSeconds = DISTANCE_EARTH_MARS / LIGHT_SPEED;
+    JourneyTimeHours = JourneyTimeSeconds / 3600;
+    
+    //Printing the results
+    printf("The time taken to journey from Earth to Mars moving at LIGHT SPEED %.f km/s is %.f seconds \n", LIGHT_SPEED, JourneyTimeSeconds);
+    printf("That is equivalent to: %f hours \n", JourneyTimeHours);
+    
+    return 0;
+}
